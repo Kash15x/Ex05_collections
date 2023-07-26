@@ -1,8 +1,8 @@
 package com.qa.model;
-
-public abstract class Animal {
-     private   String name;
-          private   int    age;
+import java.util.Collections;
+public abstract class Animal implements Comparable<Animal> {
+    private String name;
+    private int age;
 
 
     public Animal(String name, int age) {
@@ -25,14 +25,24 @@ public abstract class Animal {
     public void setAge(int age) {
         this.age = age;
     }
-     public abstract String sayHello();
 
-         public abstract String move();
+    public abstract String sayHello();
 
-              public String toString() {
-                  return "Name: " + name + " Age: " + age;
-              }
-              }
+    public abstract String move();
+
+    public String toString() {
+        return "Name: " + name + " Age: " + age;
+    }
+
+    public int compareTo(Animal o) {
+        return age - o.getAge();
+
+
+        }
+    }
+
+
+
 
 
 
